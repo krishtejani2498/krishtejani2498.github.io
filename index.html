@@ -7,15 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f8f9fb;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --accent: #0ea5a4;
-      --accent-soft: #e0f5f5;
-      --accent2: #0d9488;
-      --num: #0ea5a4;
+      --bg: #0B1426;
+      --card: #1A2742;
+      --card-inner: #111d35;
+      --text: #e8edf5;
+      --muted: #7a90b8;
+      --border: #243354;
+      --accent: #4A90E2;
+      --accent-soft: rgba(74,144,226,0.12);
+      --accent2: #6aaaf0;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,7 +30,7 @@
 
     /* ── Hero strip ── */
     .hero-strip {
-      background: linear-gradient(135deg, #0b1f2e 0%, #0d3d3c 60%, #0a2a29 100%);
+      background: linear-gradient(135deg, #050A13 0%, #0B1426 60%, #0d1a30 100%);
       padding: 48px 24px 40px;
       text-align: center;
       position: relative;
@@ -40,15 +40,15 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(14,165,164,0.18) 0%, transparent 70%);
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(74,144,226,0.14) 0%, transparent 70%);
     }
     .hero-strip img {
       width: 80px;
       height: 80px;
       border-radius: 18px;
       object-fit: cover;
-      border: 2px solid rgba(14,165,164,0.4);
-      box-shadow: 0 8px 32px rgba(14,165,164,0.25);
+      border: 2px solid rgba(74,144,226,0.4);
+      box-shadow: 0 8px 32px rgba(74,144,226,0.2);
       margin-bottom: 16px;
       position: relative;
     }
@@ -60,17 +60,15 @@
       letter-spacing: -0.01em;
       position: relative;
     }
-    .hero-strip h1 span {
-      color: var(--accent);
-    }
+    .hero-strip h1 span { color: var(--accent); }
     .badge {
       display: inline-block;
       margin-top: 10px;
       padding: 4px 14px;
-      background: rgba(14,165,164,0.15);
-      border: 1px solid rgba(14,165,164,0.3);
+      background: rgba(74,144,226,0.12);
+      border: 1px solid rgba(74,144,226,0.3);
       border-radius: 100px;
-      color: #5eead4;
+      color: #7db8f0;
       font-size: 0.78rem;
       font-weight: 500;
       letter-spacing: 0.04em;
@@ -161,11 +159,12 @@
       letter-spacing: -0.01em;
     }
     .section p {
-      color: #374151;
+      color: #a8b8d0;
       font-size: 0.93rem;
       margin-bottom: 10px;
     }
     .section p:last-child { margin-bottom: 0; }
+    .section strong { color: var(--text); }
 
     ul.clean {
       list-style: none;
@@ -179,7 +178,7 @@
       padding: 7px 0;
       border-bottom: 1px solid var(--border);
       font-size: 0.91rem;
-      color: #374151;
+      color: #a8b8d0;
     }
     ul.clean li:last-child { border-bottom: none; }
     ul.clean li::before {
@@ -199,7 +198,7 @@
       margin-top: 14px;
     }
     .feature-card {
-      background: var(--bg);
+      background: var(--card-inner);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 14px 16px;
@@ -228,17 +227,17 @@
 
     /* highlight box */
     .highlight {
-      background: var(--accent-soft);
+      background: rgba(74,144,226,0.10);
       border-left: 3px solid var(--accent);
       border-radius: 0 10px 10px 0;
       padding: 12px 16px;
       margin: 12px 0 0;
       font-size: 0.88rem;
-      color: #0f4f4e;
+      color: #7db8f0;
       font-weight: 500;
     }
 
-    a { color: var(--accent2); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+    a { color: var(--accent2); text-decoration: none; border-bottom: 1px solid rgba(74,144,226,0.25); }
     a:hover { border-bottom-color: var(--accent2); }
 
     .footer {
@@ -457,7 +456,7 @@
       </div>
       <p>If you have any questions, concerns, or feedback regarding this Privacy Policy or the App, please reach out to us at:</p>
       <p><a href="mailto:sharmiltejani@gmail.com">sharmiltejani@gmail.com</a></p>
-      <p style="margin-top:10px;color:#6b7280;font-size:0.85rem;">We aim to respond to all inquiries within 3 business days.</p>
+      <p style="margin-top:10px;color:#7a90b8;font-size:0.85rem;">We aim to respond to all inquiries within 3 business days.</p>
     </div>
 
   </div>
