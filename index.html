@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calculator Pro — Privacy Policy</title>
+  <title>Calculator Pro — Legal</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -31,7 +31,7 @@
     /* ── Hero strip ── */
     .hero-strip {
       background: linear-gradient(135deg, #050A13 0%, #0B1426 60%, #0d1a30 100%);
-      padding: 48px 24px 40px;
+      padding: 48px 24px 30px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -76,11 +76,66 @@
       position: relative;
     }
 
+    /* ── Tabs ── */
+    .tabs-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+    }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 6px;
+      margin-top: -20px;
+      position: relative;
+      z-index: 10;
+    }
+    .tab {
+      flex: 1;
+      padding: 12px 20px;
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .tab:hover {
+      color: var(--text);
+      background: rgba(74,144,226,0.08);
+    }
+    .tab.active {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(74,144,226,0.3);
+    }
+
     /* ── Layout ── */
     .container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px 60px;
+      padding: 30px 20px 60px;
+    }
+
+    /* ── Tab content ── */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* ── Summary bar ── */
@@ -251,6 +306,7 @@
     @media (max-width: 600px) {
       .section { padding: 20px 18px; }
       .summary { grid-template-columns: 1fr 1fr; }
+      .tab { font-size: 0.85rem; padding: 10px 16px; }
     }
   </style>
 </head>
@@ -259,220 +315,407 @@
   <!-- Hero -->
   <div class="hero-strip">
     <img src="image.png" alt="Calculator Pro icon" />
-    <h1><span>Calculator Pro</span> — Privacy Policy</h1>
+    <h1><span>Calculator Pro</span></h1>
     <div class="badge">Last updated: 18 March 2026</div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs-wrapper">
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('privacy')">Privacy Policy</button>
+      <button class="tab" onclick="switchTab('terms')">Terms of Service</button>
+    </div>
   </div>
 
   <div class="container">
 
-    <!-- Quick summary -->
-    <div class="summary">
-      <div class="summary-item">
-        <div class="summary-icon">🔒</div>
-        <div class="summary-text">
-          <strong>No Personal Data</strong>
-          <span>We don't collect it</span>
+    <!-- Privacy Policy Tab Content -->
+    <div id="privacy-content" class="tab-content active">
+      
+      <!-- Quick summary -->
+      <div class="summary">
+        <div class="summary-item">
+          <div class="summary-icon">🔒</div>
+          <div class="summary-text">
+            <strong>No Personal Data</strong>
+            <span>We don't collect it</span>
+          </div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-icon">📱</div>
+          <div class="summary-text">
+            <strong>Ad-Supported</strong>
+            <span>Free with ads</span>
+          </div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-icon">🔐</div>
+          <div class="summary-text">
+            <strong>Local Storage</strong>
+            <span>Data stays on device</span>
+          </div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-icon">🧒</div>
+          <div class="summary-text">
+            <strong>All Ages Safe</strong>
+            <span>Family-friendly ads</span>
+          </div>
         </div>
       </div>
-      <div class="summary-item">
-        <div class="summary-icon">📱</div>
-        <div class="summary-text">
-          <strong>Ad-Supported</strong>
-          <span>Free with ads</span>
+
+      <!-- 1. Introduction -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">01</div>
+          <h2>Introduction</h2>
+        </div>
+        <p>Welcome to <strong>Calculator Pro</strong> ("we", "our", "the App"). We are committed to protecting the privacy of every person who uses our application.</p>
+        <p>Calculator Pro is a <strong>free, ad-supported</strong> calculator application. This Privacy Policy explains what information is collected by our advertising partners, how the app works, and your rights as a user.</p>
+      </div>
+
+      <!-- 2. Data Collection -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">02</div>
+          <h2>Information We Collect</h2>
+        </div>
+        <p><strong>Calculator Pro itself does not collect, store, or transmit any personal information.</strong> The app does not require an account, login, or any form of registration.</p>
+        <p style="margin-top:16px;"><strong>Advertising Partner (Google AdMob):</strong></p>
+        <p>This app displays advertisements served by <strong>Google AdMob</strong>, a third-party advertising service. AdMob may collect certain information to provide personalized ads, including:</p>
+        <ul class="clean">
+          <li>Device information (device model, operating system version)</li>
+          <li>Advertising ID (a unique identifier for advertising purposes)</li>
+          <li>IP address (to determine approximate location)</li>
+          <li>App usage data (interactions with ads)</li>
+          <li>Crash logs and diagnostic data (for ad performance)</li>
+        </ul>
+        <div class="highlight">This data is collected and processed by Google, not by us. We do not have access to your personal information collected by AdMob.</div>
+        <p style="margin-top:14px;">You can learn more about how Google uses data at: <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
+      </div>
+
+      <!-- 3. App Functionality -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">03</div>
+          <h2>App Functionality</h2>
+        </div>
+        <p>Calculator Pro is a multi-mode calculator application. All calculation features work locally on your device. The app includes the following calculator modes:</p>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="fc-title"><span class="dot"></span>Standard</div>
+            <div class="fc-desc">Basic arithmetic — addition, subtraction, multiplication, division, percentage, and sign toggle.</div>
+          </div>
+          <div class="feature-card">
+            <div class="fc-title"><span class="dot"></span>Scientific</div>
+            <div class="fc-desc">Trigonometry (sin, cos, tan, inverses), logarithms, powers, square root, constants π and e, parentheses, and ANS recall.</div>
+          </div>
+          <div class="feature-card">
+            <div class="fc-title"><span class="dot"></span>GST / Tax</div>
+            <div class="fc-desc">Add or remove GST from any amount with automatic CGST, SGST, and IGST breakdown. Quick rate presets: 5%, 12%, 18%, 28%.</div>
+          </div>
+          <div class="feature-card">
+            <div class="fc-title"><span class="dot"></span>Engineering</div>
+            <div class="fc-desc">Unit conversion across 10 categories, engineering formula solver (Ohm's law, kinetic energy, Reynolds number, ideal gas, and more), and 2×2 matrix operations.</div>
+          </div>
+          <div class="feature-card">
+            <div class="fc-title"><span class="dot"></span>Graphing</div>
+            <div class="fc-desc">Plot up to 3 equations simultaneously. Supports standard functions, trigonometry, and powers. Smooth zoom and pan with touch gestures.</div>
+          </div>
+          <div class="feature-card">
+            <div class="fc-title"><span class="dot"></span>Settings</div>
+            <div class="fc-desc">Toggle keypad sound effects and button animations. Select display language. All preferences stored locally on your device only.</div>
+          </div>
         </div>
       </div>
-      <div class="summary-item">
-        <div class="summary-icon">🔐</div>
-        <div class="summary-text">
-          <strong>Local Storage</strong>
-          <span>Data stays on device</span>
+
+      <!-- 4. Calculation History -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">04</div>
+          <h2>Calculation History</h2>
         </div>
+        <p>The Standard and Scientific calculator modes save your calculation history locally on your device using an SQLite database built into Android.</p>
+        <ul class="clean">
+          <li>History data never leaves your device</li>
+          <li>Not uploaded, synced, or backed up to any server</li>
+          <li>You can view and clear your history at any time from within the app</li>
+          <li>Uninstalling the app permanently removes all stored history</li>
+        </ul>
       </div>
-      <div class="summary-item">
-        <div class="summary-icon">🧒</div>
-        <div class="summary-text">
-          <strong>All Ages Safe</strong>
-          <span>Family-friendly ads</span>
+
+      <!-- 5. Permissions -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">05</div>
+          <h2>App Permissions</h2>
         </div>
+        <p>Calculator Pro requires the following permissions to function:</p>
+        <ul class="clean">
+          <li><strong>INTERNET</strong> — Required to load and display advertisements from Google AdMob</li>
+          <li><strong>AD_ID</strong> — Used by Google AdMob to serve personalized advertisements based on your interests</li>
+        </ul>
+        <p style="margin-top:14px;">The app does <strong>not</strong> access your camera, microphone, contacts, location (GPS), storage, or any other sensitive system resources. These permissions are used solely for advertisement delivery by Google AdMob.</p>
       </div>
-    </div>
 
-    <!-- 1. Introduction -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">01</div>
-        <h2>Introduction</h2>
-      </div>
-      <p>Welcome to <strong>Calculator Pro</strong> ("we", "our", "the App"). We are committed to protecting the privacy of every person who uses our application.</p>
-      <p>Calculator Pro is a <strong>free, ad-supported</strong> calculator application. This Privacy Policy explains what information is collected by our advertising partners, how the app works, and your rights as a user.</p>
-    </div>
-
-    <!-- 2. Data Collection -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">02</div>
-        <h2>Information We Collect</h2>
-      </div>
-      <p><strong>Calculator Pro itself does not collect, store, or transmit any personal information.</strong> The app does not require an account, login, or any form of registration.</p>
-      <p style="margin-top:16px;"><strong>Advertising Partner (Google AdMob):</strong></p>
-      <p>This app displays advertisements served by <strong>Google AdMob</strong>, a third-party advertising service. AdMob may collect certain information to provide personalized ads, including:</p>
-      <ul class="clean">
-        <li>Device information (device model, operating system version)</li>
-        <li>Advertising ID (a unique identifier for advertising purposes)</li>
-        <li>IP address (to determine approximate location)</li>
-        <li>App usage data (interactions with ads)</li>
-        <li>Crash logs and diagnostic data (for ad performance)</li>
-      </ul>
-      <div class="highlight">This data is collected and processed by Google, not by us. We do not have access to your personal information collected by AdMob.</div>
-      <p style="margin-top:14px;">You can learn more about how Google uses data at: <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
-    </div>
-
-    <!-- 3. App Functionality -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">03</div>
-        <h2>App Functionality</h2>
-      </div>
-      <p>Calculator Pro is a multi-mode calculator application. All calculation features work locally on your device. The app includes the following calculator modes:</p>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="fc-title"><span class="dot"></span>Standard</div>
-          <div class="fc-desc">Basic arithmetic — addition, subtraction, multiplication, division, percentage, and sign toggle.</div>
+      <!-- 6. Third-Party Services -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">06</div>
+          <h2>Third-Party Services</h2>
         </div>
-        <div class="feature-card">
-          <div class="fc-title"><span class="dot"></span>Scientific</div>
-          <div class="fc-desc">Trigonometry (sin, cos, tan, inverses), logarithms, powers, square root, constants π and e, parentheses, and ANS recall.</div>
+        <p>Calculator Pro uses <strong>Google AdMob</strong> for advertising. AdMob is a third-party service that may collect and process data as described in their privacy policy.</p>
+        <p style="margin-top:16px;"><strong>Learn More:</strong></p>
+        <ul class="clean">
+          <li>Google AdMob Privacy Policy — <a href="https://support.google.com/admob/answer/6128543" target="_blank">View Policy</a></li>
+          <li>Google Privacy Policy — <a href="https://policies.google.com/privacy" target="_blank">View Policy</a></li>
+        </ul>
+        <div class="highlight">To opt out of personalized ads:<br>
+        • Android: Settings → Google → Ads → Opt out of Ads Personalization<br>
+        • Or visit: <a href="https://www.google.com/settings/ads" target="_blank" style="color:#7db8f0;">www.google.com/settings/ads</a></div>
+        <p style="margin-top:14px;">The app does <strong>not</strong> use any other third-party services such as analytics platforms, crash reporting tools, or social login services.</p>
+      </div>
+
+      <!-- 7. Data Sharing -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">07</div>
+          <h2>Data Sharing</h2>
         </div>
-        <div class="feature-card">
-          <div class="fc-title"><span class="dot"></span>GST / Tax</div>
-          <div class="fc-desc">Add or remove GST from any amount with automatic CGST, SGST, and IGST breakdown. Quick rate presets: 5%, 12%, 18%, 28%.</div>
+        <p>We do not collect or share any personal data ourselves. However, Google AdMob, as a third-party advertising partner, may share anonymized data with advertisers for ad targeting and measurement purposes, as described in Google's Privacy Policy.</p>
+        <p>Your calculation data, history, and preferences remain entirely on your device and are never transmitted to us or any third party.</p>
+      </div>
+
+      <!-- 8. Children -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">08</div>
+          <h2>Suitable for All Ages</h2>
         </div>
-        <div class="feature-card">
-          <div class="fc-title"><span class="dot"></span>Engineering</div>
-          <div class="fc-desc">Unit conversion across 10 categories, engineering formula solver (Ohm's law, kinetic energy, Reynolds number, ideal gas, and more), and 2×2 matrix operations.</div>
+        <p>Calculator Pro is appropriate for users of all ages. While the app displays advertisements, we use <strong>Google AdMob's family-safe ad filtering</strong> to ensure age-appropriate content is shown.</p>
+        <p>The app does not contain in-app purchases or external links outside of advertisements. We do not knowingly collect personal information from children under 13. Ads shown are subject to Google's ad policies and content guidelines.</p>
+      </div>
+
+      <!-- 9. Security -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">09</div>
+          <h2>Security</h2>
         </div>
-        <div class="feature-card">
-          <div class="fc-title"><span class="dot"></span>Graphing</div>
-          <div class="fc-desc">Plot up to 3 equations simultaneously. Supports standard functions, trigonometry, and powers. Smooth zoom and pan with touch gestures.</div>
+        <p>Calculator Pro does not collect or store your personal data on our servers. All calculation data and preferences remain on your device and are entirely under your control.</p>
+        <p>Data collected by Google AdMob is protected under Google's security measures and policies. We encourage you to review Google's Privacy Policy to understand how they protect your information.</p>
+      </div>
+
+      <!-- 10. Your Choices -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">10</div>
+          <h2>Your Choices</h2>
         </div>
-        <div class="feature-card">
-          <div class="fc-title"><span class="dot"></span>Settings</div>
-          <div class="fc-desc">Toggle keypad sound effects and button animations. Select display language. All preferences stored locally on your device only.</div>
+        <p>You have the following options regarding advertising:</p>
+        <ul class="clean">
+          <li><strong>Opt out of personalized ads</strong> — Visit your device's ad settings (Settings → Google → Ads → Opt out of Ads Personalization)</li>
+          <li><strong>Reset your Advertising ID</strong> — This will reset the identifier used by AdMob to show you relevant ads</li>
+          <li><strong>Clear app data</strong> — You can clear your calculation history at any time from within the app</li>
+        </ul>
+        <div class="highlight">Note: Opting out of personalized ads means you will still see ads, but they may be less relevant to your interests.</div>
+      </div>
+
+      <!-- 11. Changes -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">11</div>
+          <h2>Changes to This Policy</h2>
         </div>
+        <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last updated" date at the top of this page. Your continued use of the App after any update constitutes your acceptance of the revised policy.</p>
+        <p>We encourage you to review this policy periodically to stay informed.</p>
       </div>
+
+      <!-- 12. Contact -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">12</div>
+          <h2>Contact Us</h2>
+        </div>
+        <p>If you have any questions, concerns, or feedback regarding this Privacy Policy or the App, please reach out to us at:</p>
+        <p><a href="mailto:sharmiltejani@gmail.com">sharmiltejani@gmail.com</a></p>
+        <p style="margin-top:10px;color:#7a90b8;font-size:0.85rem;">We aim to respond to all inquiries within 3 business days.</p>
+      </div>
+
     </div>
 
-    <!-- 4. Calculation History -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">04</div>
-        <h2>Calculation History</h2>
-      </div>
-      <p>The Standard and Scientific calculator modes save your calculation history locally on your device using an SQLite database built into Android.</p>
-      <ul class="clean">
-        <li>History data never leaves your device</li>
-        <li>Not uploaded, synced, or backed up to any server</li>
-        <li>You can view and clear your history at any time from within the app</li>
-        <li>Uninstalling the app permanently removes all stored history</li>
-      </ul>
-    </div>
+    <!-- Terms of Service Tab Content -->
+    <div id="terms-content" class="tab-content">
 
-    <!-- 5. Permissions -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">05</div>
-        <h2>App Permissions</h2>
+      <!-- 1. Acceptance of Terms -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">01</div>
+          <h2>Acceptance of Terms</h2>
+        </div>
+        <p>By downloading, installing, or using <strong>Calculator Pro</strong> ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
+        <p>Calculator Pro is a <strong>free, ad-supported</strong> calculator application providing standard arithmetic, scientific functions, GST and tax calculations, engineering tools, and graphing capabilities.</p>
       </div>
-      <p>Calculator Pro requires the following permissions to function:</p>
-      <ul class="clean">
-        <li><strong>INTERNET</strong> — Required to load and display advertisements from Google AdMob</li>
-        <li><strong>AD_ID</strong> — Used by Google AdMob to serve personalized advertisements based on your interests</li>
-      </ul>
-      <p style="margin-top:14px;">The app does <strong>not</strong> access your camera, microphone, contacts, location (GPS), storage, or any other sensitive system resources. These permissions are used solely for advertisement delivery by Google AdMob.</p>
-    </div>
 
-    <!-- 6. Third-Party Services -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">06</div>
-        <h2>Third-Party Services</h2>
+      <!-- 2. License to Use -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">02</div>
+          <h2>License to Use</h2>
+        </div>
+        <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use Calculator Pro for your personal, non-commercial use, subject to these Terms.</p>
+        <p>You may not:</p>
+        <ul class="clean">
+          <li>Copy, modify, distribute, sell, or lease any part of the App</li>
+          <li>Reverse engineer or attempt to extract the source code of the App</li>
+          <li>Remove or alter any proprietary notices or labels on the App</li>
+          <li>Use the App for any unlawful purpose</li>
+        </ul>
       </div>
-      <p>Calculator Pro uses <strong>Google AdMob</strong> for advertising. AdMob is a third-party service that may collect and process data as described in their privacy policy.</p>
-      <p style="margin-top:16px;"><strong>Learn More:</strong></p>
-      <ul class="clean">
-        <li>Google AdMob Privacy Policy — <a href="https://support.google.com/admob/answer/6128543" target="_blank">View Policy</a></li>
-        <li>Google Privacy Policy — <a href="https://policies.google.com/privacy" target="_blank">View Policy</a></li>
-      </ul>
-      <div class="highlight">To opt out of personalized ads:<br>
-      • Android: Settings → Google → Ads → Opt out of Ads Personalization<br>
-      • Or visit: <a href="https://www.google.com/settings/ads" target="_blank" style="color:#7db8f0;">www.google.com/settings/ads</a></div>
-      <p style="margin-top:14px;">The app does <strong>not</strong> use any other third-party services such as analytics platforms, crash reporting tools, or social login services.</p>
-    </div>
 
-    <!-- 7. Data Sharing -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">07</div>
-        <h2>Data Sharing</h2>
+      <!-- 3. Advertising and Data -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">03</div>
+          <h2>Advertising and Data</h2>
+        </div>
+        <p>Calculator Pro displays advertisements provided by <strong>Google AdMob</strong> to support the free availability of this app.</p>
+        <p style="margin-top:12px;">By using this app, you acknowledge and agree that:</p>
+        <ul class="clean">
+          <li>Advertisements will be displayed within the app (banner ads, interstitial ads, and native ads)</li>
+          <li>Google AdMob may collect certain information as described in our Privacy Policy and Google's Privacy Policy</li>
+          <li>Ad content is controlled by Google AdMob and may change based on your interests and device information</li>
+          <li>You should not click on ads unintentionally or excessively</li>
+        </ul>
+        <p style="margin-top:14px;">All calculation data, history, and preferences are stored locally on your device only. We do not collect or transmit your calculation data. However, Google AdMob may collect device and usage information for ad serving purposes.</p>
+        <div class="highlight">For more information about how Google uses data, visit: <a href="https://policies.google.com/privacy" target="_blank" style="color:#7db8f0;">Google Privacy Policy</a></div>
       </div>
-      <p>We do not collect or share any personal data ourselves. However, Google AdMob, as a third-party advertising partner, may share anonymized data with advertisers for ad targeting and measurement purposes, as described in Google's Privacy Policy.</p>
-      <p>Your calculation data, history, and preferences remain entirely on your device and are never transmitted to us or any third party.</p>
-    </div>
 
-    <!-- 8. Children -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">08</div>
-        <h2>Suitable for All Ages</h2>
+      <!-- 4. User Conduct -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">04</div>
+          <h2>User Conduct</h2>
+        </div>
+        <p>You agree to use Calculator Pro in a lawful and responsible manner. You will not:</p>
+        <ul class="clean">
+          <li>Use the App in any way that violates local, national, or international law</li>
+          <li>Attempt to interfere with or disrupt the App's functionality</li>
+          <li>Use automated tools (bots, scripts) to interact with the App</li>
+          <li>Engage in click fraud or manipulate advertisements</li>
+          <li>Attempt to gain unauthorized access to any portion of the App</li>
+        </ul>
       </div>
-      <p>Calculator Pro is appropriate for users of all ages. While the app displays advertisements, we use <strong>Google AdMob's family-safe ad filtering</strong> to ensure age-appropriate content is shown.</p>
-      <p>The app does not contain in-app purchases or external links outside of advertisements. We do not knowingly collect personal information from children under 13. Ads shown are subject to Google's ad policies and content guidelines.</p>
-    </div>
 
-    <!-- 9. Security -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">09</div>
-        <h2>Security</h2>
+      <!-- 5. Intellectual Property -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">05</div>
+          <h2>Intellectual Property</h2>
+        </div>
+        <p>All content, features, and functionality of Calculator Pro, including but not limited to text, graphics, logos, icons, images, and software, are the exclusive property of the app developers and are protected by copyright, trademark, and other intellectual property laws.</p>
+        <p>The Calculator Pro name, logo, and all related names, logos, product and service names, designs, and slogans are trademarks of the app developers. You must not use such marks without our prior written permission.</p>
       </div>
-      <p>Calculator Pro does not collect or store your personal data on our servers. All calculation data and preferences remain on your device and are entirely under your control.</p>
-      <p>Data collected by Google AdMob is protected under Google's security measures and policies. We encourage you to review Google's Privacy Policy to understand how they protect your information.</p>
-    </div>
 
-    <!-- 10. Your Choices -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">10</div>
-        <h2>Your Choices</h2>
+      <!-- 6. Disclaimer of Warranties -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">06</div>
+          <h2>Disclaimer of Warranties</h2>
+        </div>
+        <p>Calculator Pro is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis, without warranties of any kind, either express or implied.</p>
+        <p>We do not warrant that:</p>
+        <ul class="clean">
+          <li>The App will be uninterrupted, timely, secure, or error-free</li>
+          <li>The results obtained from the use of the App will be accurate or reliable</li>
+          <li>Any errors in the App will be corrected</li>
+          <li>The App will meet your specific requirements</li>
+        </ul>
+        <div class="highlight">Calculator Pro is designed for general calculation purposes. For critical calculations (financial, scientific, engineering), always verify results independently.</div>
       </div>
-      <p>You have the following options regarding advertising:</p>
-      <ul class="clean">
-        <li><strong>Opt out of personalized ads</strong> — Visit your device's ad settings (Settings → Google → Ads → Opt out of Ads Personalization)</li>
-        <li><strong>Reset your Advertising ID</strong> — This will reset the identifier used by AdMob to show you relevant ads</li>
-        <li><strong>Clear app data</strong> — You can clear your calculation history at any time from within the app</li>
-      </ul>
-      <div class="highlight">Note: Opting out of personalized ads means you will still see ads, but they may be less relevant to your interests.</div>
-    </div>
 
-    <!-- 11. Changes -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">11</div>
-        <h2>Changes to This Policy</h2>
+      <!-- 7. Limitation of Liability -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">07</div>
+          <h2>Limitation of Liability</h2>
+        </div>
+        <p>To the fullest extent permitted by applicable law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from:</p>
+        <ul class="clean">
+          <li>Your use or inability to use the App</li>
+          <li>Any unauthorized access to or use of our servers</li>
+          <li>Any interruption or cessation of transmission to or from the App</li>
+          <li>Any bugs, viruses, or other harmful code transmitted through the App</li>
+          <li>Any errors, inaccuracies, or omissions in calculation results</li>
+        </ul>
       </div>
-      <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last updated" date at the top of this page. Your continued use of the App after any update constitutes your acceptance of the revised policy.</p>
-      <p>We encourage you to review this policy periodically to stay informed.</p>
-    </div>
 
-    <!-- 12. Contact -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">12</div>
-        <h2>Contact Us</h2>
+      <!-- 8. Third-Party Services -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">08</div>
+          <h2>Third-Party Services</h2>
+        </div>
+        <p>Calculator Pro uses Google AdMob, a third-party advertising service. Your use of the App is also subject to Google's Terms of Service and Privacy Policy.</p>
+        <p style="margin-top:12px;"><strong>Third-Party Links:</strong></p>
+        <ul class="clean">
+          <li>Google AdMob Terms — <a href="https://admob.google.com/home/terms/" target="_blank">View Terms</a></li>
+          <li>Google Privacy Policy — <a href="https://policies.google.com/privacy" target="_blank">View Policy</a></li>
+        </ul>
+        <p style="margin-top:14px;">We are not responsible for the content, accuracy, or practices of third-party services. Your interactions with third-party services are solely between you and the third party.</p>
       </div>
-      <p>If you have any questions, concerns, or feedback regarding this Privacy Policy or the App, please reach out to us at:</p>
-      <p><a href="mailto:sharmiltejani@gmail.com">sharmiltejani@gmail.com</a></p>
-      <p style="margin-top:10px;color:#7a90b8;font-size:0.85rem;">We aim to respond to all inquiries within 3 business days.</p>
+
+      <!-- 9. Updates and Modifications -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">09</div>
+          <h2>Updates and Modifications</h2>
+        </div>
+        <p>We reserve the right to modify, suspend, or discontinue Calculator Pro (or any part thereof) at any time, with or without notice, for any reason.</p>
+        <p>We may release updates, bug fixes, or new features from time to time. While we strive to improve the App, we are under no obligation to provide updates or support.</p>
+      </div>
+
+      <!-- 10. Changes to Terms -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">10</div>
+          <h2>Changes to These Terms</h2>
+        </div>
+        <p>We may update these Terms of Service from time to time. When we do, we will revise the "Last updated" date at the top of this page.</p>
+        <p>Your continued use of Calculator Pro after any changes to these Terms constitutes your acceptance of the new Terms. If you do not agree to the updated Terms, you must stop using the App.</p>
+      </div>
+
+      <!-- 11. Termination -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">11</div>
+          <h2>Termination</h2>
+        </div>
+        <p>We may terminate or suspend your access to Calculator Pro immediately, without prior notice or liability, for any reason, including if you breach these Terms.</p>
+        <p>Upon termination, your right to use the App will immediately cease. All provisions of the Terms that by their nature should survive termination shall survive, including but not limited to ownership provisions, warranty disclaimers, and limitations of liability.</p>
+      </div>
+
+      <!-- 12. Governing Law -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">12</div>
+          <h2>Governing Law</h2>
+        </div>
+        <p>These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.</p>
+        <p>Any disputes arising from these Terms or your use of Calculator Pro shall be subject to the exclusive jurisdiction of the courts located in Gujarat, India.</p>
+      </div>
+
+      <!-- 13. Contact -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-num">13</div>
+          <h2>Contact Us</h2>
+        </div>
+        <p>If you have any questions or concerns about these Terms of Service, please contact us at:</p>
+        <p><a href="mailto:sharmiltejani@gmail.com">sharmiltejani@gmail.com</a></p>
+        <p style="margin-top:10px;color:#7a90b8;font-size:0.85rem;">We aim to respond to all inquiries within 3 business days.</p>
+      </div>
+
     </div>
 
   </div>
@@ -480,6 +723,26 @@
   <div class="footer">
     © 2026 Calculator Pro. All rights reserved. &nbsp;·&nbsp; Ad-supported app using Google AdMob.
   </div>
+
+  <script>
+    function switchTab(tabName) {
+      // Remove active class from all tabs and contents
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+      
+      // Add active class to selected tab and content
+      if (tabName === 'privacy') {
+        document.querySelectorAll('.tab')[0].classList.add('active');
+        document.getElementById('privacy-content').classList.add('active');
+      } else if (tabName === 'terms') {
+        document.querySelectorAll('.tab')[1].classList.add('active');
+        document.getElementById('terms-content').classList.add('active');
+      }
+      
+      // Scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
